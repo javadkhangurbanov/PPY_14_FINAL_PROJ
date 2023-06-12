@@ -1,0 +1,54 @@
+podcast aggregator
+
+search by keywords
+
+display thumbnails with links
+short description (if available)
+
+scrap from a list of sources
+
+podcastindex.org rss/spotify api(spotipy)
+
+==========
+
+first make a gui outlay - switching between scenes(frames). Write it in a correct way through main process(function) and stuff like that.
+then test spotipy stuff: finding podcasts by keywords.
+combine.
+
+
+
+
+
+--------------------------------------------
+
+bs4 for extracting info from rss
+selenium to scroll down and get all results from the search query
+
+---
+
+load page -> take all items in it, save the index of the last one ->
+-> use selenium to scroll down and repeat the same, taking all items starting from the previous last item index.
+
+can check if the page height stops increasing to see if lazy loading ended
+
+---
+
+handle the case where no podcasts are found:
+add an invisible label that becomes visible when no podcasts are found | SOLVED
+
+
+
+--------------------------------------------
+get results from the website in a parsed form ->
+-> show them on the app ->
+-> add functions like sorting and filtering ->
+-> add bookmarking and saving it in a database
+
+--------------------------------------------
+BUGS/TODO:
+when filtering by categories too fast the app crashes: main.py, line 72 | SOLVED
+add desription, handle cases where authors or description text is too big | SOLVED
+implement sorting | SOLVED
+the "find" button is disabled if the search field is empty | SOLVED
+get the link to podcast website, aside from pi_link | SOLVED
+implement WebDriverWait for get_original_website method | SOLVED
